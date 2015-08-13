@@ -9,6 +9,7 @@
 #import "ViewController.h"
 
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet UIImageView *needle;
 
 @end
 
@@ -16,12 +17,53 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    self.view.autoresizesSubviews=NO;
+    self.needle.transform = CGAffineTransformRotate(self.needle.transform, 45*M_PI/180);
+
+    UIPanGestureRecognizer *panning = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGesture:)];
+    [self.view addGestureRecognizer:panning];
+    
+
+}
+
+- (IBAction)panGesture:(UIPanGestureRecognizer *)sender {
+    
+//    // ----- needle moves ---- //
+//    CGPoint translation = [sender translationInView:self.view];
+//    NSLog(@"Panned: %f x %f", translation.x, translation.y);
+//    CGPoint velocity = [sender velocityInView:self.view];
+//    float xx = velocity.x;
+//    float yy = velocity.y;
+//     float speed = needleMovement(xx, yy);
+//    [self.needle setTransform:CGAffineTransformMakeRotation(speed/100)];
+//    //  ----- ----------
+  
+    
+    
+
+    
+}
+
+
+float needleMovement(float x, float y) {
+    NSLog(@"Needle movement: %f, %f", x, y);
+    
+    float result = ((x + y) / 50);
+    
+    return result;
+}
+
+
+-(void)rotateNeedle:(UIRotationGestureRecognizer *)recognizer{
+    if (recognizer.state == UIGestureRecognizerStateEnded) {
+        self.needle.transform = CGAffineTransformRotate(self.needle.transform, 45*M_PI/180);
+    }
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
 }
 
 @end

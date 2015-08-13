@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -15,11 +16,82 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RPM_speedometer.png" translatesAutoresizingMaskIntoConstraints="NO" id="fy0-0E-Wod">
+                                <rect key="frame" x="36" y="40" width="528" height="520"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="eg1-Nk-KxG" appends="YES" id="iIX-hr-HEL"/>
+                                </connections>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="needle_center_down.png" translatesAutoresizingMaskIntoConstraints="NO" id="vgh-LW-1VP">
+                                <rect key="frame" x="268" y="147" width="64" height="305"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.95294117649999999" green="0.92941176469999998" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="fy0-0E-Wod" firstAttribute="top" secondItem="vgh-LW-1VP" secondAttribute="bottom" constant="-412" id="1H5-vu-8SX"/>
+                            <constraint firstItem="vgh-LW-1VP" firstAttribute="leading" secondItem="fy0-0E-Wod" secondAttribute="trailing" constant="-296" id="1sO-wX-Ko5"/>
+                            <constraint firstAttribute="centerX" secondItem="fy0-0E-Wod" secondAttribute="centerX" id="4pf-nx-APy"/>
+                            <constraint firstItem="vgh-LW-1VP" firstAttribute="top" secondItem="fy0-0E-Wod" secondAttribute="top" constant="107" id="5c6-Zu-BnN"/>
+                            <constraint firstAttribute="trailing" secondItem="fy0-0E-Wod" secondAttribute="trailing" constant="42" id="EQx-vj-8At"/>
+                            <constraint firstItem="fy0-0E-Wod" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="22" id="Lzw-BH-UU8"/>
+                            <constraint firstAttribute="centerY" secondItem="fy0-0E-Wod" secondAttribute="centerY" id="NBR-P8-ryY"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fy0-0E-Wod" secondAttribute="trailing" constant="26" id="NuN-hc-iDS"/>
+                            <constraint firstItem="fy0-0E-Wod" firstAttribute="top" secondItem="vgh-LW-1VP" secondAttribute="bottom" constant="-412" id="Uhr-jP-WNH"/>
+                            <constraint firstItem="vgh-LW-1VP" firstAttribute="leading" secondItem="fy0-0E-Wod" secondAttribute="trailing" constant="-296" id="VQ6-WK-Jcj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fy0-0E-Wod" secondAttribute="trailing" constant="20" id="YUD-KQ-GT7"/>
+                            <constraint firstItem="fy0-0E-Wod" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="20" id="bWM-aW-1f9"/>
+                            <constraint firstItem="vgh-LW-1VP" firstAttribute="centerY" secondItem="fy0-0E-Wod" secondAttribute="centerY" constant="-0.5" id="gTR-pK-pxj"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="fy0-0E-Wod" secondAttribute="bottom" constant="42" id="grf-Ta-UFZ"/>
+                            <constraint firstItem="fy0-0E-Wod" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="22" id="hCv-L9-UKr"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="fy0-0E-Wod" secondAttribute="bottom" constant="42" id="l5c-4C-2GV"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="fy0-0E-Wod" secondAttribute="bottom" constant="42" id="lGa-ea-O51"/>
+                            <constraint firstItem="fy0-0E-Wod" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="26" id="odm-WQ-RcJ"/>
+                            <constraint firstItem="fy0-0E-Wod" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="42" id="qVh-z2-fUk"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fy0-0E-Wod" secondAttribute="trailing" constant="26" id="sdY-bS-unn"/>
+                            <constraint firstItem="fy0-0E-Wod" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="26" id="tQV-fD-sOp"/>
+                            <constraint firstItem="vgh-LW-1VP" firstAttribute="centerX" secondItem="fy0-0E-Wod" secondAttribute="centerX" id="uFe-bY-zvs"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="fy0-0E-Wod" secondAttribute="bottom" constant="40" id="upj-qt-WSW"/>
+                            <constraint firstItem="fy0-0E-Wod" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="22" id="vrv-Ed-9Kl"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="1H5-vu-8SX"/>
+                                <exclude reference="EQx-vj-8At"/>
+                                <exclude reference="Lzw-BH-UU8"/>
+                                <exclude reference="NuN-hc-iDS"/>
+                                <exclude reference="Uhr-jP-WNH"/>
+                                <exclude reference="hCv-L9-UKr"/>
+                                <exclude reference="odm-WQ-RcJ"/>
+                                <exclude reference="qVh-z2-fUk"/>
+                                <exclude reference="sdY-bS-unn"/>
+                                <exclude reference="tQV-fD-sOp"/>
+                                <exclude reference="vrv-Ed-9Kl"/>
+                                <exclude reference="1sO-wX-Ko5"/>
+                                <exclude reference="5c6-Zu-BnN"/>
+                                <exclude reference="VQ6-WK-Jcj"/>
+                                <exclude reference="grf-Ta-UFZ"/>
+                                <exclude reference="l5c-4C-2GV"/>
+                                <exclude reference="lGa-ea-O51"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="needle" destination="vgh-LW-1VP" id="4KO-1B-Sng"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="eg1-Nk-KxG">
+                    <connections>
+                        <action selector="panGesture:" destination="vXZ-lx-hvc" id="4dF-Km-wmH"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="RPM_speedometer.png" width="601" height="601"/>
+        <image name="needle_center_down.png" width="55" height="251"/>
+    </resources>
 </document>
